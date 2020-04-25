@@ -1,0 +1,2 @@
+class VideoAssignmentsController < ApplicationController
+end
