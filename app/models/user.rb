@@ -3,4 +3,7 @@ class User < ApplicationRecord
 
     validates_presence_of :email
     validates_uniqueness_of :email
+
+    has_one :student
+    has_one :instructor
 end

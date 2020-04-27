@@ -8,4 +8,6 @@ class Instructor < ApplicationRecord
     has_many :assignments
     has_one :resource
     has_many :videos
+
+    belongs_to :user
 end

@@ -30,7 +30,9 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
   end
 
   create_table "instructors", force: :cascade do |t|
+    t.string "name"
     t.integer "resource_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
   end
 
   create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -75,6 +79,9 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.integer "instructor_id"
+    t.integer "student_id"
+    t.string "user_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
