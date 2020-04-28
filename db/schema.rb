@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
   create_table "instructor_requests", force: :cascade do |t|
     t.integer "instructor_id"
     t.integer "student_id"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

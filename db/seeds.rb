@@ -14,7 +14,7 @@ s1 = Student.create(user_id: u1.id)
 
 
 
-is1 = InstructorRequest.create(instructor_id: i1.id, student_id: s1.id)
+is1 = InstructorRequest.create(instructor_id: i1.id, student_id: s1.id, status: 'pending')
 
 
 inst1 = Instrument.create()

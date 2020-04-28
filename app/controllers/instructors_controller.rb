@@ -5,6 +5,6 @@ class InstructorsController < ApplicationController
     end
     def index
         instructors = Instructor.all
-        render json: instructors
+        render json: instructors, :include => [:user]
     end
 end
