@@ -21,10 +21,17 @@ class SessionsController < ApplicationController
 
     def logged_in   
         if @current_user
+            if @current_user.user_type == 'STUDENT'
             render json: {
                 logged_in: true,
                 user: @current_user
             }
+        elsif @current_user.user_type == 'INSTRUCTOR'
+            render json: {
+                logged_in: true,
+                user: @current_user
+            }
+        end
         else
             render json: {
                 logged_in: false

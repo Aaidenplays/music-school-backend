@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-u1 = User.create(email: 'a@email.com', password: 'asd', password_confirmation: 'asd')
+u1 = User.create(email: 'i@email.com', password: 'asd', password_confirmation: 'asd', user_type: 'STUDENT')
+u2 = User.create(email: 's@email.com', password: 'asd', password_confirmation: 'asd', user_type: 'INSTRUCTOR')
 
-i1 = Instructor.create(user_id: u1.id)
+i1 = Instructor.create(user_id: u2.id)
 s1 = Student.create(user_id: u1.id)
 
 

@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class UsersController < ApplicationController
     def create
         # binding.pry
         user = User.create!(
@@ -18,4 +18,15 @@ class RegistrationsController < ApplicationController
             render json: { status: 500 }
         end
     end
+
+    def show
+        user = User.find_by(id: params[:id])
+        render json: user
+    end
+
+    def index
+        users = User.all
+        render json: users
+            # :include => [:student, :instructor]
+    end    
 end

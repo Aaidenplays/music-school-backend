@@ -1,9 +1,7 @@
 class InstructorRequestsController < ApplicationController
     def create
-        instructor_request = InstructorRequest.create(
-            instructor_id: params[:instructor], 
-            student_id: params[:student], 
-            status: params[:status])
+        instructor_request = InstructorRequest.create(instructor_id: params[:instructor], student_id: params[:student], status: params[:status])
+            # binding.pry
         render json: instructor_request
     end
 
@@ -15,6 +13,6 @@ class InstructorRequestsController < ApplicationController
 
     def index
         instructor_requests = InstructorRequest.all
-        render json: instructor_requests
+        render json: instructor_requests, each_serializer: InstructorRequestSerializer
     end
 end
