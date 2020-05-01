@@ -1,5 +1,5 @@
 class InstructorSerializer < ActiveModel::Serializer
-  attributes :id, :name, :students, :instructor_requests
+  attributes :id, :name, :students, :instructor_requests, :assignments
   belongs_to :user
   has_many :students
   has_many :instructor_requests
@@ -14,13 +14,16 @@ class InstructorSerializer < ActiveModel::Serializer
   end
   end
 
-  def students
-    self.object.instructor_requests.map do |s|
-    {
-      id: s.id,
-      instructor: s.instructor,
-      student: s.student
-    }
-  end
+  def instructor_requests
+    self.object.instructor_requests.map do |is|
+      {
+        id: is.id,
+        instructor_id: is.instructor_id,
+        status: is.status,
+        student_id: is.student_id,
+        instructor: is.instructor,
+        student: is.student
+      }
+    end
   end
 end

@@ -1,5 +1,5 @@
 class StudentSerializer < ActiveModel::Serializer
-  attributes :id, :name, :instructors, :instructor_requests
+  attributes :id, :name, :instructors, :instructor_requests, :assignments, :videos
   belongs_to :user
   has_many :instructors
   has_many :instructor_requests
@@ -21,7 +21,8 @@ class StudentSerializer < ActiveModel::Serializer
         instructor_id: is.instructor_id,
         status: is.status,
         student_id: is.student_id,
-        instructor: is.instructor
+        instructor: is.instructor,
+        student: is.student
       }
     end
   end

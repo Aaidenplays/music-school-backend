@@ -4,6 +4,7 @@ class CreateVideos < ActiveRecord::Migration[6.0]
       t.integer :resource_id
       t.integer :student_id
       t.integer :instructor_id
+      t.string :url
 
 
       t.timestamps

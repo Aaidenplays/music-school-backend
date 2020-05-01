@@ -5,11 +5,18 @@ class AssignmentsController < ApplicationController
     end
 
     def create
-
+        assignment = Assignment.create(
+            student_id: params[:student],
+            instructor_id: params[:instructor],
+            description: params[:description]
+        )
+        render json: assignment
     end
 
     def show
         assignment = Assignment.find_by(id: params[:id])
+        render json: assignment
+
     end
 
     def update
