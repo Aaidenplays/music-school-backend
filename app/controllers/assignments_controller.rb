@@ -8,7 +8,8 @@ class AssignmentsController < ApplicationController
         assignment = Assignment.create(
             student_id: params[:student],
             instructor_id: params[:instructor],
-            description: params[:description]
+            description: params[:description],
+            status: params[:status]
         )
         render json: assignment
     end
@@ -20,7 +21,15 @@ class AssignmentsController < ApplicationController
     end
 
     def update
+        assignment = Assignment.find_by(id: params[:id])
+        if params[:status]
+            assignment.update!(status: params[:status])
+        end
+        if params[:feedback]
+            assignment.update!(feedback: params[:feedback])
+        end
 
+        render json: assignment
     end
 
     def destroy

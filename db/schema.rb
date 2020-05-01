@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
     t.integer "student_id"
     t.integer "instructor_id"
     t.string "description"
+    t.string "status"
+    t.string "feedback"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

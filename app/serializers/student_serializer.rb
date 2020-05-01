@@ -26,4 +26,17 @@ class StudentSerializer < ActiveModel::Serializer
       }
     end
   end
+
+  def assignments
+    self.object.assignments.map do |is|
+      {
+        id: is.id,
+        student_id: is.student_id,
+        instructor_id: is.instructor_id,
+        description: is.description,
+        status: is.status,
+        videos: is.videos
+      }
+    end
+  end
 end
