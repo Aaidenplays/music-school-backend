@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
   end
 
   create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
 
   create_table "materials", force: :cascade do |t|
     t.integer "resource_id"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -84,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_174154) do
     t.string "email"
     t.string "password_digest"
     t.string "user_type"
+    t.string "avatarURL"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
