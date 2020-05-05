@@ -5,7 +5,8 @@ class UsersController < ApplicationController
             email: params['user']['email'],
             password: params['user']['password'],
             password_confirmation: params['user']['password_confirmation'],
-            user_type: params['user']['user_type']
+            user_type: params['user']['user_type'],
+            avatarURL: params['user']['url']
         )
 
         if user
